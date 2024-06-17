@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useContext } from "react";
+import { context } from "./Context";
 export default function ShowResult() {
-  const [exercises, setExercises] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchExercises = async () => {
-      try {
-        const response = await axios.get(
-          `https://raw.githubusercontent.com/doubtcrack/Fitness/main/db.json`
-        );
-        setExercises(response.data);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
-
-    console.log(exercises);
-    fetchExercises();
-  }, []);
+  const { filteredExercises } = useContext(context);
   return (
     <div className="mt-28">
       <h1 className="text-3xl text-center my-12 font-bold">Showing Results</h1>
       <div className="flex flex-wrap gap-8 justify-center">
-        {exercises.map((excercise) => {
+        {filteredExercises.map((excercise) => {
           return (
             <div
               key={excercise.id}

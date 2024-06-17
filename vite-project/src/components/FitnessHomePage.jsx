@@ -5,15 +5,15 @@ import header from "../assets/header.svg";
 export default function FitnessHomePage() {
   return (
     <div className="">
-      <div className="flex justify-between p-20 ">
+      <div className="flex justify-between px-20 py-12 ">
         <h1 className="text-5xl text-blue-600 font-bold">Fitness</h1>
         <button className="border-2 px-8 py-4 rounded-3xl bg-blue-600 text-white font-bold">
           Stay Strong
         </button>
       </div>
 
-      <div className="flex w-full justify-between p-20">
-        <div className="w-3/5 mt-20">
+      <div className="flex w-full justify-between px-20 py-12">
+        <div className="w-3/5 ">
           <div className="relative mb-20">
             <h1 className="text-7xl font-bold">
               One step towards a healthy lifestyle
